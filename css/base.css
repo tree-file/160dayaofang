@@ -1,0 +1,80 @@
+/* 
+* @Author: Marte
+* @Date:   2019-05-09 09:07:44
+* @Last Modified by:   Marte
+* @Last Modified time: 2019-05-09 19:19:09
+*/
+body,
+p,
+h1,
+h2,
+h4,
+h5,
+h6,
+h3,
+ul,
+ol,
+dl,
+td,
+dd,
+input,
+textarea,
+option,
+hr,
+button,
+fieldset,
+legend {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+i,
+em {
+    font-style: normal;
+}
+
+input,
+area {
+    outline: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+}
+
+#box {
+    width: 100px;
+    height: 135px;
+    background: skyblue;
+    position: fixed;
+    right: -4px;
+    top: 180px;
+    z-index: 5;
+    background: url("../images/on_line_1.gif") no-repeat;
+}
