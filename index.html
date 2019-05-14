@@ -5,14 +5,18 @@
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/base.css">
     <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="lib/swiper.min.css">
     <script src="js/common.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/myjquery.js" type="text/javascript" charset="utf-8"></script>
+    <script src="lib/swiper.min.js" type="text/javascript" charset="utf-8"></script>
 </head>
 
 <body>
     <a href="#">
         <div id="box"></div>
     </a>
+    <div id="side">
+    </div>
     <div class="header">
         <div class="header-top">
             <div class="container">
@@ -432,6 +436,20 @@
                     <div></div>
                 </div>
                 <div class="banner-c">
+                    <!-- Swiper -->
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="images//5c74f36a926f4.jpg"></div>
+                            <div class="swiper-slide"><img src="images//5c74f36a926f4.jpg"></div>
+                            <div class="swiper-slide"><img src="images//5c74f36a926f4.jpg"></div>
+                            <div class="swiper-slide"><img src="images//5c74f36a926f4.jpg"></div>
+                        </div>
+                        <!-- Add Pagination -->
+                        <div class="swiper-pagination"></div>
+                        <!-- Add Arrows -->
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
                 </div>
                 <div class="banner-r">
                     <a class="item item-02" href="#">
@@ -453,7 +471,7 @@
             <div class="limit-buttom">
                 <div class="feture-cates" style="height: 240px">
                     <ul class="cates-left" style="width: auto;height: auto">
-                        <li class="item" style="border-bottom: none;height: auto;">
+                        <li class="item" style="margin-left:0;">
                             <a href="#">
                                 <img title="" style="width: 200px;height: 200px;" class="img100 prod" src="images/5c667335891ad.jpg">
                             </a>
@@ -463,7 +481,7 @@
                                 ￥69.9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<del>￥69.90</del>
                             </span>
                         </li>
-                        <li class="item" style="border-bottom: none;height: auto;margin-left: 48px;">
+                        <li class="item">
                             <a href="#">
                                 <img title="" style="width: 200px;height: 200px;" class="img100 prod" src="images/5959bdc093c22.jpg">
                             </a>
@@ -473,7 +491,7 @@
                                 ￥239&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<del>￥239.00</del>
                             </span>
                         </li>
-                        <li class="item" style="border-bottom: none;height: auto;margin-left: 48px;">
+                        <li class="item">
                             <a href="#">
                                 <img title="" style="width: 200px;height: 200px;" class="img100 prod" src="images/5c10d5ec40528.jpg">
                             </a>
@@ -483,7 +501,7 @@
                                 ￥99&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<del>￥188.00</del>
                             </span>
                         </li>
-                        <li class="item" style="border-bottom: none;height: auto;margin-left: 48px;">
+                        <li class="item">
                             <a href="#">
                                 <img title="" style="width: 200px;height: 200px;" class="img100 prod" src="images/5bc4572703ec1.jpeg">
                             </a>
@@ -493,7 +511,7 @@
                                 ￥208&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<del>￥155.00</del>
                             </span>
                         </li>
-                        <li class="item" style="border-bottom: none;height: auto;margin-left: 48px;">
+                        <li class="item">
                             <a href="#">
                                 <img title="" style="width: 200px;height: 200px;" class="img100 prod" src="images/5c04ef5741d34.jpg">
                             </a>
@@ -507,15 +525,483 @@
                 </div>
             </div>
         </div>
-        <div>
-            <div class="limit-top">
-                <div class="limit-title fl">精品推荐</div>
-                <div class="limit-two">
+    </div>
+    <div class="module">
+        <div class="module-cont">
+            <div class="module-top">
+                <div class="module-title fl">精品推荐</div>
+            </div>
+            <div class="module-buttom">
+                <ul class="module-left">
+                    <li class="item">
+                        <a href="#">
+                            <img title="" class="img100" src="images/5c2ed1554eabf.jpg" />
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="#">
+                            <img title="" class="img100" src="images/5c2ed1cde7bbb.jpg" />
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="#">
+                            <img title="" class="img100" src="images/5c2ed214c1a90.jpg" />
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="#">
+                            <img title="" class="img100" src="images/5c2ed331a6567.jpg" />
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="#">
+                            <img title="" class="img100" src="images/5c2ed401e303a.jpg" />
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="#">
+                            <img title="" class="img100" src="images/5c2ed6f84418f.jpg" />
+                        </a>
+                    </li>
+                </ul>
+                <div class="module-center">
+                    <div class="swiper-container">
+                        <div class="swiper-slide"><img src="images/5c2f053720151.jpg"></div>
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="images/5c9490cf4a241.jpg"></div>
+                        </div>
+                        <!-- Add Pagination -->
+                        <div class="swiper-pagination"></div>
+                        <!-- Add Arrows -->
+                        <div class="swiper-button-next btn bn1"></div>
+                        <div class="swiper-button-prev btn bn2"></div>
+                    </div>
                 </div>
+                <ul class="module-right">
+                    <div class="item" style="border-right:0;">
+                        <a href="#">
+                            <img title="" class="img100" src="images/5c2ed2e84df76.jpg">
+                        </a>
+                    </div>
+                    <div class="item" style="border-right:0;">
+                        <a href="#">
+                            <img title="" class="img100" src="images/5c2ed51537540.jpg">
+                        </a>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="main">
+        <div class="main-cont">
+            <div class="main-left">
+                <div class="title">
+                    <div class="txt-type">
+                        <span>1F</span>
+                        <h2 title="专科用药">专科用药</h2>
+                    </div>
+                </div>
+                <div class="recommend-classes">
+                    <ul>
+                        <li><a href="#" title="专科用药">专科用药</a></li>
+                        <li><a href="#" title="心脑血管科">心脑血管科</a></li>
+                        <li><a href="#" title="肿瘤科用药">肿瘤科用药</a></li>
+                        <li><a href="#" title="皮肤科用药">皮肤科用药</a></li>
+                        <li><a href="#" title="肝胆科药">肝胆科药</a></li>
+                        <li><a href="#" title="胃肠道药">胃肠道药</a></li>
+                    </ul>
+                </div>
+                <div class="left-ads">
+                    <a href="#" title="秒杀推荐">
+                        <img src="images/5c948d6f146e8.jpg" alt="" rel="lazy">
+                    </a>
+                </div>
+                <div class="left-hot-goods">
+                    <p>热卖促销：</p>
+                    <ul>
+                        <li>
+                            <i></i>
+                            <a title="白云山 舒筋健腰丸 45g/瓶*10瓶/盒 腰痛腿麻腰间盘舒筋风湿" href="#">白云山 舒筋健腰丸 45g/瓶*10瓶/盒 腰痛腿麻腰间盘舒筋风湿</a>
+                        </li>
+                        <li>
+                            <i></i>
+                            <a title="天草 丹参保心茶 180袋 活血化瘀缓解心痛心悸胸闷茶剂药品" href="#">天草 丹参保心茶 180袋 活血化瘀缓解心痛心悸胸闷茶剂药品</a>
+                        </li>
+                        <li>
+                            <i></i>
+                            <a title="701 白云山 跌打镇痛膏 10cm*400cm 风湿关节痛腰腿痛镇痛膏药" href="#">701 白云山 跌打镇痛膏 10cm*400cm 风湿关节痛腰腿痛镇痛膏药</a>
+                        </li>
+                        <li>
+                            <i></i>
+                            <a title="博士伦 润洁 萘敏维滴眼液10ml 用于缓解眼睛疲劳" href="#">博士伦 润洁 萘敏维滴眼液10ml 用于缓解眼睛疲劳</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="main-right">
+                <ul class="right-brand">
+                    <li>
+                        <span style="color: red;">热门关键字：</span>
+                    </li>
+                    <li>
+                        <a href="#" title="甘倍轻恩替卡韦胶囊">甘倍轻恩替卡韦胶囊</a>
+                    </li>
+                    <li>
+                        <a href="#" title="希爱力 他达拉非28片">希爱力 他达拉非28片</a>
+                    </li>
+                </ul>
+                <ul class="tabs-nav">
+                    <li class="tabs-selected">
+                        <i class="arrow"></i>
+                        <h3>商品推荐</h3>
+                    </li>
+                </ul>
+                <div class="right-side-layout">
+                    <div class="right-side-focus">
+                        <div class="right-side-focus">
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide"><img src="images/5c94913bd74b3.jpg"></div>
+                                    <div class="swiper-slide"><img src="images/5c948e0158a83.jpg"></div>
+                                </div>
+                                <!-- Add Pagination -->
+                                <div class="swiper-pagination"></div>
+                                <!-- Add Arrows -->
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tabs-panel middle-goods-list">
+                    <ul>
+                        <li>
+                            <dl>
+                                <dt class="goods-name"><a target="_blank" href="/product/117999.html" title="保法止 非那雄胺片 1mg*28片 gw">保法止 非那雄胺片 1mg*28片 gw</a></dt>
+                                <dd class="goods-thumb">
+                                    <a target="_blank" href="/product/117999.html">
+                                        <img src="images/5be53ff598bd1.jpeg" alt="保法止 非那雄胺片 1mg*28片 gw" data-url="/Public/upload/goods/2018/11-09/5be53ff598bd1.jpeg" rel="lazy">
+                                    </a>
+                                </dd>
+                                <dd class="goods-price"><em>¥186.00</em>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt class="goods-name"><a target="_blank" href="/product/116384.html" title="择思达 盐酸托莫西汀胶囊 40mg*7粒">择思达 盐酸托莫西汀胶囊 40mg*7粒</a></dt>
+                                <dd class="goods-thumb">
+                                    <a target="_blank" href="/product/116384.html">
+                                        <img src="images/5b39ec0707f00.jpg" alt="择思达 盐酸托莫西汀胶囊 40mg*7粒" data-url="/Public/upload/goods/2018/07-02/5b39ec0707f00.jpg" rel="lazy">
+                                    </a>
+                                </dd>
+                                <dd class="goods-price"><em>¥237.00</em>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt class="goods-name"><a target="_blank" href="/product/119669.html" title="希爱力 他达拉非片20mg*8片/盒 gw">希爱力 他达拉非片20mg*8片/盒 g...</a></dt>
+                                <dd class="goods-thumb">
+                                    <a target="_blank" href="/product/119669.html">
+                                        <img src="images/5c6a0d9b76766.jpeg" alt="希爱力 他达拉非片20mg*8片/盒 gw" data-url="/Public/upload/goods/2019/02-18/5c6a0d9b76766.jpeg" rel="lazy">
+                                    </a>
+                                </dd>
+                                <dd class="goods-price"><em>¥688.00</em>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt class="goods-name"><a target="_blank" href="/product/106756.html" title="畅迪 粉尘螨滴剂4号2ml*1瓶/盒">畅迪 粉尘螨滴剂4号2ml*1瓶/盒</a></dt>
+                                <dd class="goods-thumb">
+                                    <a target="_blank" href="/product/106756.html">
+                                        <img src="images/59783eecbba54.jpg" alt="畅迪 粉尘螨滴剂4号2ml*1瓶/盒" data-url="/Public/upload/goods/2017/07-26/59783eecbba54.jpg" rel="lazy">
+                                    </a>
+                                </dd>
+                                <dd class="goods-price"><em>¥120.00</em>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt class="goods-name"><a target="_blank" href="/product/110302.html" title="韦瑞德 富马酸替诺福韦二吡呋酯片 300mg*30片/盒">韦瑞德 富马酸替诺福韦二吡呋酯片 300...</a></dt>
+                                <dd class="goods-thumb">
+                                    <a target="_blank" href="/product/110302.html">
+                                        <img src="images/5b51b35d9268b.jpg" alt="韦瑞德 富马酸替诺福韦二吡呋酯片 300mg*30片/盒" data-url="/Public/upload/goods/2018/07-20/5b51b35d9268b.jpg" rel="lazy">
+                                    </a>
+                                </dd>
+                                <dd class="goods-price"><em>¥510.00</em>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt class="goods-name"><a target="_blank" href="/product/118386.html" title="易善复 多烯磷脂酰胆碱胶囊 228mg*24粒 肝损伤 肝炎 gw">易善复 多烯磷脂酰胆碱胶囊 228mg*...</a></dt>
+                                <dd class="goods-thumb">
+                                    <a target="_blank" href="/product/118386.html">
+                                        <img src="images/5c065090c5729.jpeg" alt="易善复 多烯磷脂酰胆碱胶囊 228mg*24粒 肝损伤 肝炎 gw" data-url="/Public/upload/goods/2018/12-04/5c065090c5729.jpeg" rel="lazy">
+                                    </a>
+                                </dd>
+                                <dd class="goods-price"><em>¥57.00</em>
+                                </dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="main-cont">
+            <div class="main-left">
+                <div class="title">
+                    <div class="txt-type">
+                        <span>1F</span>
+                        <h2 title="专科用药">专科用药</h2>
+                    </div>
+                </div>
+                <div class="recommend-classes">
+                    <ul>
+                        <li><a href="#" title="专科用药">专科用药</a></li>
+                        <li><a href="#" title="心脑血管科">心脑血管科</a></li>
+                        <li><a href="#" title="肿瘤科用药">肿瘤科用药</a></li>
+                        <li><a href="#" title="皮肤科用药">皮肤科用药</a></li>
+                        <li><a href="#" title="肝胆科药">肝胆科药</a></li>
+                        <li><a href="#" title="胃肠道药">胃肠道药</a></li>
+                    </ul>
+                </div>
+                <div class="left-ads">
+                    <a href="#" title="秒杀推荐">
+                        <img src="images/5c948d6f146e8.jpg" alt="" rel="lazy">
+                    </a>
+                </div>
+                <div class="left-hot-goods">
+                    <p>热卖促销：</p>
+                    <ul>
+                        <li>
+                            <i></i>
+                            <a title="白云山 舒筋健腰丸 45g/瓶*10瓶/盒 腰痛腿麻腰间盘舒筋风湿" href="#">白云山 舒筋健腰丸 45g/瓶*10瓶/盒 腰痛腿麻腰间盘舒筋风湿</a>
+                        </li>
+                        <li>
+                            <i></i>
+                            <a title="天草 丹参保心茶 180袋 活血化瘀缓解心痛心悸胸闷茶剂药品" href="#">天草 丹参保心茶 180袋 活血化瘀缓解心痛心悸胸闷茶剂药品</a>
+                        </li>
+                        <li>
+                            <i></i>
+                            <a title="701 白云山 跌打镇痛膏 10cm*400cm 风湿关节痛腰腿痛镇痛膏药" href="#">701 白云山 跌打镇痛膏 10cm*400cm 风湿关节痛腰腿痛镇痛膏药</a>
+                        </li>
+                        <li>
+                            <i></i>
+                            <a title="博士伦 润洁 萘敏维滴眼液10ml 用于缓解眼睛疲劳" href="#">博士伦 润洁 萘敏维滴眼液10ml 用于缓解眼睛疲劳</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="main-right">
+                <ul class="right-brand">
+                    <li>
+                        <span style="color: red;">热门关键字：</span>
+                    </li>
+                    <li>
+                        <a href="#" title="甘倍轻恩替卡韦胶囊">甘倍轻恩替卡韦胶囊</a>
+                    </li>
+                    <li>
+                        <a href="#" title="希爱力 他达拉非28片">希爱力 他达拉非28片</a>
+                    </li>
+                </ul>
+                <ul class="tabs-nav">
+                    <li class="tabs-selected">
+                        <i class="arrow"></i>
+                        <h3>商品推荐</h3>
+                    </li>
+                </ul>
+                <div class="right-side-layout">
+                    <div class="right-side-focus">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide"><img src="images/5c94913bd74b3.jpg"></div>
+                                <div class="swiper-slide"><img src="images/5c948e0158a83.jpg"></div>
+                            </div>
+                            <!-- Add Pagination -->
+                            <div class="swiper-pagination"></div>
+                            <!-- Add Arrows -->
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tabs-panel middle-goods-list">
+                    <ul>
+                        <li>
+                            <dl>
+                                <dt class="goods-name"><a target="_blank" href="/product/117999.html" title="保法止 非那雄胺片 1mg*28片 gw">保法止 非那雄胺片 1mg*28片 gw</a></dt>
+                                <dd class="goods-thumb">
+                                    <a target="_blank" href="/product/117999.html">
+                                        <img src="images/5be53ff598bd1.jpeg" alt="保法止 非那雄胺片 1mg*28片 gw" data-url="/Public/upload/goods/2018/11-09/5be53ff598bd1.jpeg" rel="lazy">
+                                    </a>
+                                </dd>
+                                <dd class="goods-price"><em>¥186.00</em>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt class="goods-name"><a target="_blank" href="/product/116384.html" title="择思达 盐酸托莫西汀胶囊 40mg*7粒">择思达 盐酸托莫西汀胶囊 40mg*7粒</a></dt>
+                                <dd class="goods-thumb">
+                                    <a target="_blank" href="/product/116384.html">
+                                        <img src="images/5b39ec0707f00.jpg" alt="择思达 盐酸托莫西汀胶囊 40mg*7粒" data-url="/Public/upload/goods/2018/07-02/5b39ec0707f00.jpg" rel="lazy">
+                                    </a>
+                                </dd>
+                                <dd class="goods-price"><em>¥237.00</em>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt class="goods-name"><a target="_blank" href="/product/119669.html" title="希爱力 他达拉非片20mg*8片/盒 gw">希爱力 他达拉非片20mg*8片/盒 g...</a></dt>
+                                <dd class="goods-thumb">
+                                    <a target="_blank" href="/product/119669.html">
+                                        <img src="images/5c6a0d9b76766.jpeg" alt="希爱力 他达拉非片20mg*8片/盒 gw" data-url="/Public/upload/goods/2019/02-18/5c6a0d9b76766.jpeg" rel="lazy">
+                                    </a>
+                                </dd>
+                                <dd class="goods-price"><em>¥688.00</em>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt class="goods-name"><a target="_blank" href="/product/106756.html" title="畅迪 粉尘螨滴剂4号2ml*1瓶/盒">畅迪 粉尘螨滴剂4号2ml*1瓶/盒</a></dt>
+                                <dd class="goods-thumb">
+                                    <a target="_blank" href="/product/106756.html">
+                                        <img src="images/59783eecbba54.jpg" alt="畅迪 粉尘螨滴剂4号2ml*1瓶/盒" data-url="/Public/upload/goods/2017/07-26/59783eecbba54.jpg" rel="lazy">
+                                    </a>
+                                </dd>
+                                <dd class="goods-price"><em>¥120.00</em>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt class="goods-name"><a target="_blank" href="/product/110302.html" title="韦瑞德 富马酸替诺福韦二吡呋酯片 300mg*30片/盒">韦瑞德 富马酸替诺福韦二吡呋酯片 300...</a></dt>
+                                <dd class="goods-thumb">
+                                    <a target="_blank" href="/product/110302.html">
+                                        <img src="images/5b51b35d9268b.jpg" alt="韦瑞德 富马酸替诺福韦二吡呋酯片 300mg*30片/盒" data-url="/Public/upload/goods/2018/07-20/5b51b35d9268b.jpg" rel="lazy">
+                                    </a>
+                                </dd>
+                                <dd class="goods-price"><em>¥510.00</em>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt class="goods-name"><a target="_blank" href="/product/118386.html" title="易善复 多烯磷脂酰胆碱胶囊 228mg*24粒 肝损伤 肝炎 gw">易善复 多烯磷脂酰胆碱胶囊 228mg*...</a></dt>
+                                <dd class="goods-thumb">
+                                    <a target="_blank" href="/product/118386.html">
+                                        <img src="images/5c065090c5729.jpeg" alt="易善复 多烯磷脂酰胆碱胶囊 228mg*24粒 肝损伤 肝炎 gw" data-url="/Public/upload/goods/2018/12-04/5c065090c5729.jpeg" rel="lazy">
+                                    </a>
+                                </dd>
+                                <dd class="goods-price"><em>¥57.00</em>
+                                </dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="home-floor-banner">
+            <a href="#" title="足光散">
+                <img src="images/5a127e2870d1f.png" alt="足光散" rel="lazy">
+            </a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="container-top">
+            <div class="container-title fl">常用药品</div>
+        </div>
+        <div class="container-buttom">
+            <div class="boutique">
+                <span><a href="#" title="曹清华">曹清华</a></span>
+                <span><a href="#" title="六味地黄丸">六味地黄丸</a></span>
+                <span><a href="#" title="东阿阿胶">东阿阿胶</a></span>
+                <span><a href="#" title="福牌阿胶">福牌阿胶</a></span>
+                <span><a href="#" title="肾宝片">肾宝片</a></span>
+                <span><a href="#" title="万艾可">万艾可</a></span>
+                <span><a href="#" title="畅迪粉尘螨滴剂4号">畅迪粉尘螨滴剂4号</a></span>
+                <span><a href="#" title="甘倍轻恩替卡韦胶囊">甘倍轻恩替卡韦胶囊</a></span>
+                <span><a href="#" title="银丹心脑通软胶囊">银丹心脑通软胶囊</a></span>
+                <span><a href="#" title="东维力">东维力</a></span>
+                <span><a href="#" title="马来酸噻吗洛尔滴眼液">马来酸噻吗洛尔滴眼液</a></span>
+                <span><a href="#" title="盐酸二甲双胍片">盐酸二甲双胍片</a></span>
+                <span><a href="#" title="右归胶囊">右归胶囊</a></span>
+                <span><a href="#" title="锌钙特">锌钙特</a></span>
+                <span><a href="#" title="博路定恩替卡韦片">博路定恩替卡韦片</a></span>
+                <span><a href="#" title="金戈">金戈</a></span>
+                <span><a href="#" title="奥氮平片">奥氮平片</a></span>
+                <span><a href="#" title="畅迪粉尘螨滴剂5号">畅迪粉尘螨滴剂5号</a></span>
+                <span><a href="#" title="芬吗通">芬吗通</a></span>
+                <span><a href="#" title="希爱力">希爱力</a></span>
             </div>
         </div>
     </div>
     <div class="footder">
+        <div class="foot-map">
+            <ul>
+                <li>
+                    <i class="icon con1"></i>
+                    <strong>正品低价</strong><br />
+                    <span>正品行货 品质保障</span>
+                </li>
+                <li>
+                    <i class="icon con2"></i>
+                    <strong>品类齐全</strong><br />
+                    <span>品类齐全 选择丰富</span>
+                </li>
+                <li>
+                    <i class="icon con3"></i>
+                    <strong>快速配送</strong><br />
+                    <span>多仓直发 急速配送</span>
+                </li>
+                <li style="border-right:0;">
+                    <i class="icon con4"></i>
+                    <strong>售后无忧</strong><br />
+                    <span>7天无理由退货</span>
+                </li>
+            </ul>
+        </div>
+        <div class="foot-links">
+            <div class="foot-wrapper">
+                <p>友情链接（QQ：40752915）</p>
+                <a class="title" href="#">健康资讯</a>
+                <a class="title" href="#">希爱力</a>
+                <a class="title" href="#">预约挂号</a>
+                <a class="title" href="#">药品库</a>
+                <a class="title" href="#">生活百科网</a>
+                <a class="title" href="#">胰腺炎</a>
+                <a class="title" href="#">吉三代</a>
+                <a class="title" href="#">植发多少钱</a>
+                <a class="title" href="#">藏药 </a>
+                <a class="title" href="#">中国制药机械设备网</a>
+                <a class="title" href="#">药房网</a>
+                <a class="title" href="#">减肥药</a>
+                <a class="title" href="#">药房网</a>
+                <a class="title" href="#">药智网</a>
+                <a class="title" href="#">中药</a>
+                <a class="title" href="#"> 医疗器械</a>
+                <a class="title" href="#">深圳口腔医院</a>
+                <a class="title" href="#">中国医疗人才网</a>
+                <a class="title" href="#">整形</a>
+                <a class="title" href="#">相因</a>
+                <a class="title" href="#">口腔咨询</a>
+                <a class="title" href="#">医药招商网</a>
+                <a class="title" href="#">网上药店</a>
+                <a class="title" href="#">亲子鉴定</a>
+                <a class="title" href="#">上海整形医院排名</a>
+                <a class="title" href="#">医药招商网</a>
+                <a class="title" href="#">化工商城</a>
+                <a class="title" href="#">昆山仁医网</a>
+                <a class="title" href="#">强直性脊柱炎 </a>
+                <a class="title" href="#">上海整形医院 </a>
+            </div>
+        </div>
         <div class="foot-total">
             <div class="foot">
                 <div class="foot-left">
@@ -577,5 +1063,37 @@
         </div>
     </div>
 </body>
+<script type="text/javascript">
+var side = document.getElementById('side');
+var header = document.getElementsByClassName('header');
+var scrollTop = window.scrollY;
+
+window.onscroll = function() {
+    var scrollTop = window.scrollY;
+    var iw = 120;
+    if (scrollTop >= iw) {
+        side.className = 'fix';
+    } else {
+        side.className = '';
+    }
+}
+var swiper = new Swiper('.swiper-container', {
+    spaceBetween: 30,
+    centeredSlides: true,
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    // loop: true,
+});
+</script>
 
 </html>

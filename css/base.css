@@ -2,8 +2,9 @@
 * @Author: Marte
 * @Date:   2019-05-09 09:07:44
 * @Last Modified by:   Marte
-* @Last Modified time: 2019-05-09 19:19:09
+* @Last Modified time: 2019-05-13 17:38:28
 */
+html,
 body,
 p,
 h1,
@@ -73,8 +74,9 @@ a:hover {
     height: 135px;
     background: skyblue;
     position: fixed;
-    right: -4px;
+    right: -7px;
     top: 180px;
     z-index: 5;
     background: url("../images/on_line_1.gif") no-repeat;
+    z-index: 402;
 }
