@@ -1,0 +1,24 @@
+.container {
+  width: 1190px;
+  margin: 0 auto;
+}
+.container .breadcrumb {
+  height: 36px;
+  line-height: 36px;
+  font-size: 12px;
+  margin-bottom: 6px;
+  padding-left: 10px;
+  clear: both;
+}
+.container .breadcrumb a {
+  color: #3C3C3C;
+}
+.container .breadcrumb strong {
+  font-size: 14px;
+}
+.container .breadcrumb em {
+  font-weight: normal;
+  color: #F22E00;
+}
+
+/*# sourceMappingURL=goods.css.map */

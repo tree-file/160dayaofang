@@ -162,6 +162,8 @@
                 font-size: 12px;
 
                 .hotitem {
+                    border-bottom: 1px solid #dfdfdf;
+
                     .fn-rmb {
                         font-style: normal;
                         padding-right: 2px;
@@ -505,10 +507,16 @@
                         height: 36px;
 
                         a {
+                            display: block;
                             line-height: 18px;
                             font-size: 13px;
                             color: #3c3c3c;
                             font-weight: 300;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            width: 130px;
+                            display: block;
                         }
                     }
 
@@ -547,6 +555,97 @@
                     }
                 }
             }
+        }
+    }
+}
+
+.footder {
+    border-top: 1px solid #F1F1F1;
+    background-color: #FEFEFE;
+    margin-top: 30px;
+
+    .foot-total {
+        width: 100%;
+        background: #F5F5F5;
+        height: 161px;
+
+        .foot {
+            width: 1190px;
+            margin: 0 auto 20px;
+            padding-top: 1px;
+
+            .foot-left {
+                width: 80%;
+                float: left;
+                padding: 10px;
+                font-size: 12px;
+                color: #666;
+
+                li {
+                    display: inline-block;
+                    padding: 0 10px;
+                    line-height: 2;
+                }
+
+                a {
+                    color: #666;
+                }
+
+                .foot-max {
+                    font-size: 14px;
+                    color: #333333;
+                    padding-left: 0;
+                }
+            }
+
+            .foot-right {
+                float: right;
+                height: 100px;
+
+                .call {
+                    display: flex;
+                    align-items: center;
+                    height: 100px;
+
+                    span {
+                        float: left;
+                        text-align: right;
+                        font-size: 14px;
+                        color: #666;
+                    }
+
+                    em {
+                        font-size: 18px;
+                        color: #2A2A2A;
+                    }
+
+                    img {
+                        float: left;
+                        width: 48px;
+                        height: 48px;
+                        margin-left: 20px;
+                    }
+                }
+            }
+        }
+
+    }
+
+    .foot-base {
+        width: 100%;
+        height: 100px;
+        background: #666666;
+
+        .foot-bottom {
+            width: 1190px;
+            margin: 0 auto;
+            padding-top: 1px;
+        }
+
+        p {
+            margin-top: 29px;
+            font-size: 14px;
+            color: #FFFFFF;
         }
     }
 }

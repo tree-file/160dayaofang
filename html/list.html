@@ -7,15 +7,82 @@
     <link rel="stylesheet" type="text/css" href="../css/index.css">
     <link rel="stylesheet" type="text/css" href="../css/list.css">
     <script src="../js/common.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/jquery-1.10.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../lib/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../lib/pageMe.js" type="text/javascript" charset="utf-8"></script>
     <script src="../js/myjquery.js" type="text/javascript" charset="utf-8"></script>
+    <style type="text/css">
+    /* 外面盒子样式---自己定义 */
+    .page_div {
+        padding: 18px 1px 50px;
+        height: 32px;
+        line-height: 26px;
+        color: #666;
+        float: right;
+        margin-top: 30px;
+    }
+
+    /* 页数按钮样式 */
+    .page_div button {
+        display: inline-block;
+        min-width: 30px;
+        height: 28px;
+        cursor: pointer;
+        color: #666;
+        font-size: 13px;
+        line-height: 28px;
+        background-color: #f9f9f9;
+        border: 1px solid #dce0e0;
+        text-align: center;
+        margin: 0 4px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+
+    #firstPage,
+    #lastPage,
+    #nextPage,
+    #prePage {
+        width: 50px;
+        color: #0073A9;
+        border: 1px solid #0073A9;
+    }
+
+    #nextPage,
+    #prePage {
+        width: 70px;
+    }
+
+    .page_div .current {
+        background-color: #0073A9;
+        border-color: #0073A9;
+        color: #FFF;
+    }
+
+    /* 页面数量 */
+    .totalPages {
+        margin: 0 10px;
+    }
+
+    .totalPages span,
+    .totalSize span {
+        color: #0073A9;
+        margin: 0 5px;
+    }
+
+    /*button禁用*/
+    .page_div button:disabled {
+        opacity: .5;
+        cursor: no-drop;
+    }
+    </style>
 </head>
 
-<body>
+<body ontouchstart="" onmousemove="">
     <a href="#">
         <div id="box"></div>
     </a>
-    <div id="side">
-    </div>
     <div class="header">
         <div class="header-top">
             <div class="container">
@@ -194,7 +261,7 @@
                 <div class="rehotcon" id="rehotcon">
                     <div class="hotitem">
                         <div class="itemin">
-                            <a class="proname" href="/product/121727.html">
+                            <a class="proname" href="#">
                                 <img src="../images/5cbfc1568bb1f.jpg" title="苏菲 零敏肌丝薄柔滑卫生护垫（清香型）155mm *48片/..." alt="苏菲 零敏肌丝薄柔滑卫生护垫（清香型）155mm *48片/...">
                                 <span>苏菲 零敏肌丝薄柔滑卫生...</span>
                             </a>
@@ -202,6 +269,41 @@
                                 <span class="new" rehot="90101748934_201480" style="display: block; float: left;"><i class="fn-rmb">¥</i>14.80</span>
                                 <span class="old"><i class="fn-rmb">¥</i>18.00</span>
                             </p>
+                        </div>
+                    </div>
+                    <div class="hotitem">
+                        <div class="itemin">
+                            <a class="proname" href="#">
+                                <img src="../images/5cbeb99dba11f.jpg" title="Apple iPhone XS Max 256GB移动联通电... sm" alt="Apple iPhone XS Max 256GB移动联通电... sm">
+                                <span>Apple iPhone ...</span>
+                            </a>
+                            <p class="itemprice">
+                                <span class="new" rehot="90101748934_201480" style="display: block; float: left;"><i class="fn-rmb">¥</i>12399.00</span>
+                                <span class="old"><i class="fn-rmb">¥</i>18.00</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="hotitem">
+                        <div class="itemin">
+                            <a class="proname" href="/product/121727.html">
+                                <img src="../images/5cb9a03aea8b2.jpg" title="华为P30屏内指纹版全网通双4G手机 sm" alt="华为P30屏内指纹版全网通双4G手机 sm">
+                                <span>华为P30屏内指纹版全网通...</span>
+                            </a>
+                            <p class="itemprice">
+                                <span class="new" rehot="90101748934_201480" style="display: block; float: left;"><i class="fn-rmb">¥</i>5200.00</span>
+                                <span class="old"><i class="fn-rmb">¥</i>5600.00</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="hotitem">
+                        <div class="itemin">
+                            <a class="proname" href="/product/121727.html">
+                                <img src="../images/5c9ce93496768.jpg" title="海伦凯勒新款男士偏光太阳镜个性开车驾驶眼镜潮流飞行员墨镜H8..." alt="海伦凯勒新款男士偏光太阳镜个性开车驾驶眼镜潮流飞行员墨镜H8...">
+                                <span>海伦凯勒新款男士偏光太阳...
+                                    <p class="itemprice">
+                                        <span class="new" rehot="90101748934_201480" style="display: block; float: left;"><i class="fn-rmb">¥</i>529.00</span>
+                                        <span class="old"><i class="fn-rmb">¥</i>899.00</span>
+                                    </p>
                         </div>
                     </div>
                 </div>
@@ -269,12 +371,99 @@
                 </div>
             </div>
             <ul id="cata_choose_product" class="cart_containt clearfix listContainer">
-                <li>
+            </ul>
+        </div>
+        <div id="page" class="page_div"></div>
+    </div>
+    <div class="footder">
+        <div class="foot-total fl">
+            <div class="foot">
+                <div class="foot-left">
+                    <ul>
+                        <li class="foot-max">售后服务</li>
+                        <li><a href="#">网站地图</a></li>
+                        <li><a href="#">商品索引</a></li>
+                        <li><a href="#">搜索词库</a></li>
+                        <li><a href="#">商品通用名</a></li>
+                        <li><a href="#">退换货政策</a></li>
+                        <li><a href="#">售后说明</a></li>
+                    </ul>
+                    <ul>
+                        <li class="foot-max">联系方式</li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                    <ul>
+                        <li class="foot-max">关于我们</li>
+                        <li><a href="#">关于公司</a></li>
+                        <li><a href="#">人才招聘</a></li>
+                    </ul>
+                    <ul>
+                        <li class="foot-max">资质信息</li>
+                        <li><a href="#">药品交易证</a></li>
+                        <li><a href="#">药品信息证</a></li>
+                        <li><a href="#">食品经营许可证</a></li>
+                        <li><a href="#">药品经营许可证</a></li>
+                        <li><a href="#">营业执照</a></li>
+                        <li><a href="#">医疗器械二类备案</a></li>
+                        <li><a href="#">医疗器械许可证</a></li>
+                        <li><a href="#">GSP证书</a></li>
+                    </ul>
+                    <ul>
+                        <li class="foot-max">资费标准</li>
+                        <li><a href="#">资费标准</a></li>
+                        <li><a href="#">入驻须知</a></li>
+                    </ul>
+                </div>
+                <div class="foot-right">
+                    <div class="call">
+                        <span>
+                            客服热线<br />
+                            <em>400-11-91160</em>
+                        </span>
+                        <img src="../images/phone.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="foot-base fl">
+            <div class="foot-bottom">
+                <p>
+                    广东一六零医药连锁有限公司---国家药监局认证的合法网上药店，致力于打造优质、低价、便捷的网上药店和最专业的健康服务平台<br />
+                    版权所有 保留一切权利 Copyright
+                    <em>0</em>
+                    2016-2018 www.160dyf.com 备案号:粤ICP备16105189号-2
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+var cata_choose_product = getid('cata_choose_product');
+var $page = 1;
+var $type = 'id';
+$.ajax({
+    url: "http://localhost:1903/160/api/orderby.php",
+    type: "get",
+    data: {
+        page: $page,
+        type: $type,
+    },
+    success: function(str) {
+        console.log(str);
+        create(str);
+    }
+});
+
+function create(str) {
+    var arr = JSON.parse(str);
+    console.log(arr);
+    var res = arr.goodslist.map(function(item) {
+        return `<li data-id="${item.id}">
                     <div class="nosinglemore"></div>
                     <div class="listbox clearfix">
                         <div class="listPic">
                             <a rel="nofollow" href="#">
-                                <img src="../images/5941011a2ed80.jpg" class="fn_img_lazy" title="三九999 感冒灵颗粒 10g*9袋 " alt="三九999 感冒灵颗粒 10g*9袋 ">
+                                <img src="${item.src}" class="fn_img_lazy" title="${item.title}" alt="${item.title}">
                             </a>
                         </div>
                         <div class="list-scroll">
@@ -282,22 +471,22 @@
                                 <dl class="clearfix">
                                     <dd class="">
                                         <a href="#">
-                                            <img src="../images/5941012530917.jpg" />
+                                            <img src="${item.small}" />
                                         </a>
                                     </dd>
                                     <dd class="">
                                         <a href="#">
-                                            <img data-img="../images/59410125a971f.jpg" src="../images/59410125a971f.jpg" />
+                                            <img src="${item.small}" />
                                         </a>
                                     </dd>
                                     <dd class="">
                                         <a href="#">
-                                            <img src="../images/594101250b17f.jpg" />
+                                            <img src="${item.small}" />
                                         </a>
                                     </dd>
                                     <dd class="cur">
                                         <a href="#">
-                                            <img src="../images/5941011a2ed80.jpg" />
+                                            <img src="${item.small}" />
                                         </a>
                                     </dd>
                                 </dl>
@@ -306,21 +495,30 @@
                         <div class="discountPrice">
                             <div class="price-cash">
                                 <span class="text13">¥</span>
-                                <span class="text18">13.00</span>
+                                <span class="text18">${item.price}</span>
                                 <del></del>
                             </div>
                         </div>
                         <div class="listDescript">
-                            <a href="#" class="text13">三九999 感冒灵颗粒 ...</a>
+                            <a href="#" class="text13">${item.title}</a>
                         </div>
                         <div class="itemPrice">
-                            <div class="bobs"> <span class="text12">160大药房横岗店</span></div>
-                            <div class="cart_wrapper"> <span class="text12">已售&nbsp;&nbsp;<i>10736</i></span></div>
+                            <div class="bobs"> <span class="text12">${item.pharmacy}</span></div>
+                            <div class="cart_wrapper"> <span class="text12">已售&nbsp;&nbsp;<i>${item.sold}</i></span></div>
                         </div>
                     </div>
-                </li>
-            </ul>
-        </div>
-</body>
+                </li>`;
+    }).join('');
+    cata_choose_product.innerHTML = res;
+}
+$("#page").paging({
+    pageNum: 1, // 当前页面
+    totalNum: 14, // 总页码
+    totalList: 300, // 记录总数量
+    callback: function(num) { //回调函数
+        console.log(num);
+    }
+});
+</script>
 
 </html>
