@@ -2,7 +2,7 @@
 * @Author: Marte
 * @Date:   2019-05-08 22:17:12
 * @Last Modified by:   Marte
-* @Last Modified time: 2019-05-09 09:07:26
+* @Last Modified time: 2019-05-14 14:56:09
 */
 .logo {
     width: 400px;
@@ -133,6 +133,7 @@ input {
     text-align: right;
     line-height: 43px;
     color: #666;
+    -webkit-user-select: none;
 }
 
 .this_title {
@@ -141,6 +142,7 @@ input {
 }
 
 .this_title input {
+    float: left;
     width: 354px;
     height: 43px;
     line-height: 43px;
@@ -148,6 +150,32 @@ input {
     border: 1px solid #E5E5E5;
     color: #b6b6b6;
     background-color: #fefefe;
+}
+
+.this_title .wrong {
+    float: left;
+    margin-top: 13px;
+    margin-left: 5px;
+    line-height: 20px;
+    font-size: 12px;
+    color: #f00;
+}
+
+.this_title .wrong .icon_new {
+    background: url(../images/icon_new.png) no-repeat;
+    display: none;
+}
+
+.this_title .wrong .pi_tip {
+    background-position: -162px -7px;
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    line-height: 43px;
+    vertical-align: middle;
+    margin-top: -3px;
+    margin-right: 3px;
+
 }
 
 .this_title .not {

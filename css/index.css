@@ -575,18 +575,23 @@ html {
   -webkit-transition: all .2s linear;
   -o-transition: all .2s linear;
   transition: all .2s linear;
-  display: none;
 }
 .module .module-cont .module-center .bn1 {
   background-position: -26px -71px;
-  right: 0;
+  right: -28px;
 }
 .module .module-cont .module-center .bn2 {
   background-position: 0 -71px;
-  left: 0;
+  left: -28px;
 }
 .module .module-cont .module-center:hover .btn {
   display: block;
+}
+.module .module-cont .module-center:hover .bn1 {
+  right: 0;
+}
+.module .module-cont .module-center:hover .bn2 {
+  left: 0;
 }
 .module .module-cont .module-buttom {
   height: 397px;

@@ -5,11 +5,14 @@
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="../css/base.css">
     <link rel="stylesheet" type="text/css" href="../css/reg.css">
+    <script src="../js/jquery-1.10.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../lib/gVerify.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/reg.js" type="text/javascript" charset="utf-8"></script>
 </head>
 
 <body>
     <div class="logo">
-        <a href="#" class="a">
+        <a href="../index.html" class="a">
             <img src="../images/logo.jpg" alt="">
         </a>
         <span class="greet">欢迎注册</span>
@@ -28,32 +31,39 @@
                         <li class="list">
                             <span class="title">手机号码:</span>
                             <div class="this_title">
-                                <input type="text" placeholder="请输入您的手机号码" />
+                                <input class="input-long" type="text" placeholder="请输入您的手机号码" maxlength="11" name="phone" id="_phone">
+                                <span id="phone_msg" class="wrong">
+                                    <!-- <i class="icon_new pi_tip"></i> --></span>
                             </div>
                         </li>
                         <li class="list">
                             <span class="title">图形验证码:</span>
                             <div class="this_title">
-                                <input type="text" placeholder="请输入图形验证码" class="not" />
+                                <input type="text" placeholder="请输入图形验证码" class="not" id="code_input" />
+                                <div id="v_container" style="width: 135px;height: 45px;float:left;"></div>
+                                <span id="code_msg" class="wrong"></span>
                             </div>
                         </li>
                         <li class="list">
                             <span class="title">短信验证码:</span>
                             <div class="this_title">
                                 <input type="text" placeholder="请输入短信验证码" class="not" />
-                                <input type="button" name="" value="获取短信验证码" class="note" />
+                                <input type="button" name="" value="获取短信验证码" class="note" id="my_button" />
                             </div>
                         </li>
                         <li class="list">
                             <span class="title">设置密码:</span>
                             <div class="this_title">
-                                <input type="text" placeholder="请输入包含数字和字母的6-20位密码" />
+                                <input type="text" placeholder="请输入包含数字和字母的6-20位密码" class="input-long" name="password" id="_password" />
+                                <span id="psw_msg" class="wrong">
+                                    <!-- <i class="icon_new pi_tip"></i> --></span>
                             </div>
                         </li>
                         <li class="list">
                             <span class="title">确认密码:</span>
                             <div class="this_title">
-                                <input type="text" placeholder="请再次输入密码" />
+                                <input class="input-long" placeholder="请再次输入密码" type="text" name="surepassword" id="_surepassword">
+                                <span id="_surepassword_msg" class="wrong"></span>
                             </div>
                         </li>
                         <li class="character list">
@@ -167,5 +177,20 @@
         </div>
     </div>
 </body>
+<script>
+var verifyCode = new GVerify("v_container");
+
+document.getElementById("my_button").onclick = function() {
+    var res = verifyCode.validate(document.getElementById("code_input").value);
+    if (res) {
+        $('#code_msg').html("验证码正确");
+    } else {
+        $('#code_msg').html("验证码错误");
+    }
+}
+$('#v_container').click(function() {
+    $('#code_msg').html("");
+});
+</script>
 
 </html>
