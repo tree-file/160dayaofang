@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>支持6种放大模式的jQuery图片放大镜插件</title>
+<link rel="stylesheet" type="text/css" href="css/template_styles.css">
+<link rel="stylesheet" type="text/css" href="css/grid.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/prettify.css">
+<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script src="js/prettify.js"></script>
+<script src="js/zoomsl.min.js"></script>
+<script src="js/main.js"></script>
+</head>
+<body>
+
+<!-- #main -->
+<section id="main" class="middle wrapper">
+  <div class="row row-fluid">
+    <div id="primary" class="site-content">
+      <div id="content" role="main">
+        <div class="row-fluid readable-content page">
+          <article class="post hentry">
+            <div class="entry-content"> 
+              <script>
+jQuery(function(){
+
+    // Demo1
+	$('.demo1').imagezoomsl({
+
+		zoomrange: [3, 3]
+	});
+
+    // Demo2
+	$('.demo2').imagezoomsl({
+	
+		zoomrange: [1, 10],
+		cursorshadeborder: '10px solid #000',
+		magnifiereffectanimate: 'fadeIn',
+		magnifierpos: 'left'		
+	});	
+
+    // Demo3
+	$('.demo3').imagezoomsl({
+	
+		  zoomrange: [2.12, 12],
+		  magnifiersize: [530, 340],
+		  scrollspeedanimate: 10,
+		  loopspeedanimate: 5,
+		  cursorshadeborder: '10px solid black',
+		  magnifiereffectanimate: 'slideIn'		
+	});		
+
+    // Demo4
+	$('.demo4').imagezoomsl({
+	
+          descarea: '.my-container', 				
+          zoomrange: [1, 12],
+          magnifiereffectanimate: 'fadeIn',
+          magnifierborder: 'none'		  
+	});
+	
+    // Demo5
+	$('.demo5').imagezoomsl({
+	
+          zoomrange: [1, 12],
+          zoomstart: 4,
+          innerzoom: true,
+          magnifierborder: 'none'		  
+	});
+
+	// Demo6
+	$('.demo6').imagezoomsl({
+	
+		  innerzoommagnifier: true,
+		  classmagnifier: window.external ? window.navigator.vendor === 'Yandex' ? "" : 'round-loope' : "",
+		  magnifierborder: '5px solid #F0F0F0',		  
+		  zoomrange: [2, 8],
+		  zoomstart: 4,
+		  magnifiersize: [150, 150]		  
+	});	
+	
+});
+</script>
+              <style>
+.demo2, .demo4, .demo6{float:right;}
+.my-container{border:1px solid #F0F0F0; width:250px; height:250px; float:left;}
+.round-loope{border-radius:75px; border:5px solid #F0F0F0;}
+</style>
+              
+              <!-- DEMO1 -->
+              
+              <h4>示例 1</h4>
+              <pre class="prettyprint">
+&lt;!-- HTML --&gt;
+
+   &lt;img class=&quot;my-foto&quot; src=&quot;/images/image-small.jpg&quot;  data-large=&quot;/images/image-big.jpg&quot; title=&quot;Фото&quot;&gt;
+</pre>
+              <pre class="prettyprint">
+&lt;!-- JAVASCRIPT --&gt;
+
+&lt;script&gt;
+   jQuery(function(){
+   
+      $(&quot;.my-foto&quot;).imagezoomsl({
+        
+         zoomrange: [3, 3]
+      });
+   });   
+&lt;/script&gt;
+</pre>
+              <img class="demo1" src="./images/thumb.jpg"  data-large="./images/big.jpg" title=""> 
+              
+              <!-- DEMO2 -->
+              
+              <hr>
+              <h4>示例 2</h4>
+              <pre class="prettyprint">
+&lt;!-- HTML --&gt;
+
+   &lt;img class=&quot;my-foto&quot; src=&quot;/images/image-small.jpg&quot;  data-large=&quot;/images/image-big.jpg&quot; 
+               data-title=&quot;Red Valentino&quot; data-help=&quot;Используйте колесико мыши для Zoom +/-&quot; title=&quot;Фото&quot;&gt;
+</pre>
+              <pre class="prettyprint">
+&lt;!-- JAVASCRIPT --&gt;
+
+&lt;script&gt;
+   jQuery(function(){
+   
+       $(&quot;.my-foto&quot;).imagezoomsl({
+	  
+           zoomrange: [1, 10],
+           cursorshadeborder: &quot;10px solid #000&quot;,
+           magnifiereffectanimate: &quot;fadeIn&quot;,
+           magnifierpos: &quot;left&quot;		
+       });
+   });   
+&lt;/script&gt;
+</pre>
+              <img class="demo2" src="./images/thumb.jpg" data-large="./images/big.jpg" data-title="Red Valentino" data-help="Используйте колесико мыши для Zoom +/-" title="">
+              <div class="clear"></div>
+              
+              <!-- DEMO3 -->
+              
+              <hr>
+              <h4>示例 3</h4>
+              <pre class="prettyprint">
+&lt;!-- HTML --&gt;
+
+   &lt;img class=&quot;my-foto&quot; src=&quot;/images/image-small.jpg&quot;  data-large=&quot;/images/image-big.jpg&quot; 
+               data-text-bottom=&quot;Осень-зима 2018/14 / Ready-To-Wear / НЕДЕЛЯ МОДЫ: Нью-Йорк&quot; title=&quot;Фото&quot;&gt;
+</pre>
+              <pre class="prettyprint">
+&lt;!-- JAVASCRIPT --&gt;
+
+&lt;script&gt;
+   jQuery(function(){
+   
+       $(&quot;.my-foto&quot;).imagezoomsl({
+	  
+          zoomrange: [2.12, 12],
+          magnifiersize: [530, 340],
+          scrollspeedanimate: 10,
+          loopspeedanimate: 5,
+          cursorshadeborder: &quot;10px solid black&quot;,
+          magnifiereffectanimate: &quot;slideIn&quot;					
+      });
+   });   
+&lt;/script&gt;
+</pre>
+              <img class="demo3" src="./images/thumb.jpg" data-large="./images/big.jpg" data-text-bottom="Осень-зима 2013/14 / Ready-To-Wear / НЕДЕЛЯ МОДЫ: Нью-Йорк" title="Фото"> 
+              
+              <!-- DEMO4 -->
+              
+              <hr>
+              <h4>示例 4</h4>
+              <pre class="prettyprint">
+&lt;!-- CSS --&gt;
+
+&lt;style&gt;
+.my-container{
+	border: 1px solid #F0F0F0; 
+	width: 250px; 
+	height: 250px;
+}
+&lt;/style&gt;
+</pre>
+              <pre class="prettyprint">
+&lt;!-- HTML --&gt;
+
+   &lt;img class=&quot;my-foto&quot; src=&quot;/images/image-small.jpg&quot;  data-large=&quot;/images/image-big.jpg&quot; title=&quot;Фото&quot;&gt;
+   &lt;div class=&quot;my-container&quot;&gt;&lt;/div&gt;   
+</pre>
+              <pre class="prettyprint">
+&lt;!-- JAVASCRIPT --&gt;
+
+&lt;script&gt;
+   jQuery(function(){
+   
+       $(&quot;.my-foto&quot;).imagezoomsl({
+	  
+          descarea: &quot;.my-container&quot;, 				
+          zoomrange: [1, 12],
+          magnifiereffectanimate: &quot;fadeIn&quot;,
+          magnifierborder: &quot;none&quot;		  
+       });
+   });   
+&lt;/script&gt;
+</pre>
+              <img class="demo4" src="./images/thumb.jpg" data-large="./images/big.jpg" title="Фото">
+              <div class="my-container"></div>
+              <div class="clear"></div>
+              
+              <!-- DEMO5 -->
+              
+              <hr>
+              <h4>示例 5</h4>
+              <pre class="prettyprint">
+&lt;!-- HTML --&gt;
+
+   &lt;img class=&quot;my-foto&quot; src=&quot;/images/image-small.jpg&quot;  data-large=&quot;/images/image-big.jpg&quot; title=&quot;Фото&quot;&gt;
+</pre>
+              <pre class="prettyprint">
+&lt;!-- JAVASCRIPT --&gt;
+
+&lt;script&gt;
+   jQuery(function(){
+   
+      $(&quot;.my-foto&quot;).imagezoomsl({
+	  
+         zoomrange: [1, 12],
+         zoomstart: 4,
+         innerzoom: true,
+         magnifierborder: &quot;none&quot;		 
+      });
+   });   
+&lt;/script&gt;
+</pre>
+              <img class="demo5" src="./images/thumb.jpg"  data-large="./images/big.jpg" title="Фото"> 
+              
+              <!-- DEMO6 -->
+              
+              <hr>
+              <h4>示例 6</h4>
+              <pre class="prettyprint">
+&lt;!-- CSS3 --&gt;
+
+&lt;!-- круглая лупа в Chrome и Firefox --&gt;
+&lt;style&gt;
+.round-loupe{
+   border-radius: 75px;
+   border: 5px solid #F0F0F0;
+}
+&lt;/style&gt;  
+</pre>
+              <pre class="prettyprint">
+&lt;!-- HTML --&gt;
+
+   &lt;img class=&quot;my-foto&quot; src=&quot;/images/image-small.jpg&quot; data-large=&quot;/images/image-big.jpg&quot; title=&quot;Фото&quot;&gt;
+</pre>
+              <pre class="prettyprint">
+&lt;!-- JAVASCRIPT --&gt;
+
+&lt;script&gt;
+jQuery(function(){
+   
+  $(&quot;.my-foto&quot;).imagezoomsl({
+	  
+      innerzoommagnifier: true,
+      classmagnifier: window.external ? window.navigator.vendor === &quot;Yandex&quot; ? &quot;&quot; : &quot;round-loupe&quot; : &quot;&quot;,
+      magnifierborder: &quot;5px solid #F0F0F0&quot;,                               // fix для Opera, Safary, Yandex		  
+      zoomrange: [2, 8],
+      zoomstart: 4,
+      magnifiersize: [150, 150]		
+  });
+});   
+&lt;/script&gt;
+</pre>
+              <img class="demo6" src="./images/thumb.jpg" data-large="./images/big.jpg" title="Фото">
+              <div class="clear"></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>

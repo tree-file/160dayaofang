@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../css/base.css">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <link rel="stylesheet" type="text/css" href="../css/list.css">
+    <script src="../js/common.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/jquery-1.10.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../lib/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../lib/pageMe.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/myjquery.js" type="text/javascript" charset="utf-8"></script>
+    <style type="text/css">
+    /* 外面盒子样式---自己定义 */
+    .page_div {
+        padding: 18px 1px 50px;
+        height: 32px;
+        line-height: 26px;
+        color: #666;
+        float: right;
+        margin-top: 30px;
+    }
+
+    /* 页数按钮样式 */
+    .page_div button {
+        display: inline-block;
+        min-width: 30px;
+        height: 28px;
+        cursor: pointer;
+        color: #666;
+        font-size: 13px;
+        line-height: 28px;
+        background-color: #f9f9f9;
+        border: 1px solid #dce0e0;
+        text-align: center;
+        margin: 0 4px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+
+    #firstPage,
+    #lastPage,
+    #nextPage,
+    #prePage {
+        width: 50px;
+        color: #0073A9;
+        border: 1px solid #0073A9;
+    }
+
+    #nextPage,
+    #prePage {
+        width: 70px;
+    }
+
+    .page_div .current {
+        background-color: #0073A9;
+        border-color: #0073A9;
+        color: #FFF;
+    }
+
+    /* 页面数量 */
+    .totalPages {
+        margin: 0 10px;
+    }
+
+    .totalPages span,
+    .totalSize span {
+        color: #0073A9;
+        margin: 0 5px;
+    }
+
+    /*button禁用*/
+    .page_div button:disabled {
+        opacity: .5;
+        cursor: no-drop;
+    }
+    </style>
+</head>
+
+<body ontouchstart="" onmousemove="">
+    <a href="#">
+        <div id="box"></div>
+    </a>
+    <div class="header">
+        <div class="header-top">
+            <div class="container">
+                <ul class="fl">
+                    <li class="list fl" style="display: inline-block;">
+                        <a class="list-l fl" href="#">
+                            <span>Hi，请登录</span> </a><a class="list-l list-i fl" href="#">免费注册</a>
+                    </li>
+                    <li class="fl sep"></li>
+                </ul>
+                <ul class="fr">
+                    <li class="fl dropdown my-feiniu">
+                        <a class="menu-item" href="#">
+                            <span>商家入驻</span><i class="dd"></i></a>
+                        <ul class="sub-panel">
+                            <li>
+                                <a class="J_chgurl" href="#">
+                                    <span>商家登录</span></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="fl dropdown my-feiniu">
+                        <a class="menu-item" href="#">
+                            <span>我的商城</span>
+                            <i class="dd"></i></a>
+                        <ul class="sub-panel">
+                            <li><a class="J_chgurl" href="#">我的订单</a></li>
+                            <li><a class="J_chgurl" href="#">我的积分</a></li>
+                            <li><a class="J_chgurl" href="#">我的优惠券</a></li>
+                            <li><a class="J_chgurl" href="#">我的收藏夹</a></li>
+                            <li><a class="J_chgurl" href="#">我的评论</a></li>
+                        </ul>
+                    </li>
+                    <li class="fl sep"></li>
+                    <li class="fl dropdown mobile-feiniu">
+                        <a class="menu-item" href=""><i class="fl ico"></i>
+                            <span class="fl">400-1191-160</span></a>
+                    </li>
+                    <li class="fl sep"></li>
+                    <li class="fl">
+                        <a class="menu-item" href="#" style="margin:0 8px;">
+                            <span>帮助中心</span></a>
+                    </li>
+                    <li class="fl sep"></li>
+                    <li class="fl">
+                        <a class="txt fl" style="line-height:unset;margin:0 0 0 8px;" href="#">关注我们：</a>
+                    </li>
+                    <li class="fl dropdown weixin">
+                        <a href="" class="fl ico"></a>
+                        <div class="sub-panel wx-box">
+                            <span class="arrow-b">◆</span>
+                            <span class="arrow-a">◆</span>
+                            <p class="n"> 扫描二维码 <br> 关注160大药房官方微信 </p>
+                            <img src="../images/qrcode_vmall_app01.png" />
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="header-center">
+            <div class="container">
+                <div class="container-left fl">
+                    <a href="#" class="item fl"><img src="../images/logo.jpg"></a>
+                </div>
+                <div class="container-center fl">
+                    <form action="">
+                        <div class="s-form">
+                            <i class="s-ico"></i>
+                            <input type="text" class="fl s-input" value="" placeholder="搜索关键字">
+                            <a href="#" class="s-btn fl">搜索</a>
+                        </div>
+                    </form>
+                    <div class="container-c">
+                        <a href="#">奥利司他</a>
+                        <a href="#">感冒灵颗粒</a>
+                        <a href="#">复方川贝止咳糖浆</a>
+                        <a href="#">维D钙咀嚼片</a>
+                        <a href="#">雅培小安素</a>
+                        <a href="#">蔓迪</a>
+                        <a href="#">洗鼻器</a>
+                        <a href="#">安耐晒小金瓶</a>
+                        <a href="#">CPB隔离乳</a>
+                        <a href="#">可莱丝面膜</a>
+                        <a href="#">雅诗兰黛3件套</a>
+                        <a href="#">露娜洁面仪</a>
+                        <a href="#">养生壶</a>
+                        <a href="#">花茶</a>
+                        <a href="#">灭蚊灯</a>
+                        <a href="#">冈本003</a>
+                        <a href="#">飞机杯</a>
+                    </div>
+                </div>
+                <div class="container-right fr">
+                    <p class="c-n fl">我的购物车</p>
+                    <p class="c-num fl">
+                        <span>
+                            (<span class="count cart_quantity">0</span>)
+                        </span>
+                        <i class="i-c"></i>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="header-buttom">
+            <div class="nav">
+                <div class="nav-left">
+                    <a href="#" class="main-title">
+                        <span class="ico"></span>商品分类
+                    </a>
+                </div>
+                <ul class="main-nav">
+                    <li class="nav-item">
+                        <a class="menu-item menu-item-active" href="#" style="overflow: visible;">首页 </a>
+                    </li>
+                    <li class="nav-item">
+                        <a style="overflow: visible;" href="#" class="menu-item"> 营养保健 </a>
+                    </li>
+                    <li class="nav-item">
+                        <a style="overflow: visible;" href="#" class="menu-item"> 性福生活 </a>
+                    </li>
+                    <li class="nav-item">
+                        <a style="overflow: visible;" href="#" class="menu-item"> 男科药馆 </a>
+                    </li>
+                    <li class="nav-item">
+                        <a style="overflow: visible;" href="#" class="menu-item"> 妇科频道 </a>
+                    </li>
+                    <li class="nav-item">
+                        <a style="overflow: visible;" href="#" class="menu-item"> 医疗器械 </a>
+                    </li>
+                    <li class="nav-item">
+                        <a style="overflow: visible;" href="#" class="menu-item"> 健康资讯 </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="warpper">
+        <div id="mian-cont">
+            <div class="item fl">
+                <div class="fl">
+                    <span class="u-nav-title">
+                        <a href="/cate/1180.html">家庭用药</a>
+                    </span>
+                </div>
+                <div class="fl" id="m-selected-cery">
+                    <div class="u-left-icon">
+                        <i class="z-arrow"></i>
+                    </div>
+                    <div class="u-nav-attr">
+                        <a href="/cate/1180.html">家庭用药<i></i></a>
+                        <span class="z-blank-bar"></span>
+                        <ul class="u-attr-list">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cata_cart_left">
+            <div class="m-cart">
+                <p class="title">
+                    <a href="/cate/1180.html"></a>
+                </p>
+                <div id="cata_list">
+                    <ul class="menu_3">
+                        <li class="menu_two">
+                            <span></span>
+                            <div class="second_div">
+                                <span class="second_span"></span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="m-rehotbox" style="display:block;">
+                <h2 class="rehottit">推荐热卖</h2>
+                <div class="rehotcon" id="rehotcon">
+                    <div class="hotitem">
+                        <div class="itemin">
+                            <a class="proname" href="#">
+                                <img src="../images/5cbfc1568bb1f.jpg" title="苏菲 零敏肌丝薄柔滑卫生护垫（清香型）155mm *48片/..." alt="苏菲 零敏肌丝薄柔滑卫生护垫（清香型）155mm *48片/...">
+                                <span>苏菲 零敏肌丝薄柔滑卫生...</span>
+                            </a>
+                            <p class="itemprice">
+                                <span class="new" rehot="90101748934_201480" style="display: block; float: left;"><i class="fn-rmb">¥</i>14.80</span>
+                                <span class="old"><i class="fn-rmb">¥</i>18.00</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="hotitem">
+                        <div class="itemin">
+                            <a class="proname" href="#">
+                                <img src="../images/5cbeb99dba11f.jpg" title="Apple iPhone XS Max 256GB移动联通电... sm" alt="Apple iPhone XS Max 256GB移动联通电... sm">
+                                <span>Apple iPhone ...</span>
+                            </a>
+                            <p class="itemprice">
+                                <span class="new" rehot="90101748934_201480" style="display: block; float: left;"><i class="fn-rmb">¥</i>12399.00</span>
+                                <span class="old"><i class="fn-rmb">¥</i>18.00</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="hotitem">
+                        <div class="itemin">
+                            <a class="proname" href="/product/121727.html">
+                                <img src="../images/5cb9a03aea8b2.jpg" title="华为P30屏内指纹版全网通双4G手机 sm" alt="华为P30屏内指纹版全网通双4G手机 sm">
+                                <span>华为P30屏内指纹版全网通...</span>
+                            </a>
+                            <p class="itemprice">
+                                <span class="new" rehot="90101748934_201480" style="display: block; float: left;"><i class="fn-rmb">¥</i>5200.00</span>
+                                <span class="old"><i class="fn-rmb">¥</i>5600.00</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="hotitem">
+                        <div class="itemin">
+                            <a class="proname" href="/product/121727.html">
+                                <img src="../images/5c9ce93496768.jpg" title="海伦凯勒新款男士偏光太阳镜个性开车驾驶眼镜潮流飞行员墨镜H8..." alt="海伦凯勒新款男士偏光太阳镜个性开车驾驶眼镜潮流飞行员墨镜H8...">
+                                <span>海伦凯勒新款男士偏光太阳...
+                                    <p class="itemprice">
+                                        <span class="new" rehot="90101748934_201480" style="display: block; float: left;"><i class="fn-rmb">¥</i>529.00</span>
+                                        <span class="old"><i class="fn-rmb">¥</i>899.00</span>
+                                    </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cata_shop_right" id="tracker_category">
+            <div class="attribute_content">
+                <div class="attrs">
+                    <div class="m-tr">
+                        <div class="g-left">
+                            <p>品牌</p>
+                        </div>
+                        <div class="g-right ">
+                            <div class="g-list">
+                                <ul class="f-list h76">
+                                    <li> <a data-href="" href="" data-key="brand" data-val="435" class=""><i style=""></i>畅迪</a> </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="m-tr">
+                        <div class="g-left">
+                            <p>价格</p>
+                        </div>
+                        <div class="g-right ">
+                            <div class="g-list">
+                                <ul class="f-list h76 ">
+                                    <li> <a href="/cate/1180.html?sort=sort&amp;sort_asc=desc&amp;price=0-164" data-attr-desc=""><i></i>164元以下</a> </li>
+                                    <li> <a href="/cate/1180.html?sort=sort&amp;sort_asc=desc&amp;price=164-328" data-attr-desc=""><i></i>164-328元</a> </li>
+                                    <li> <a href="/cate/1180.html?sort=sort&amp;sort_asc=desc&amp;price=492-656" data-attr-desc=""><i></i>492-656元</a> </li>
+                                    <li> <a href="/cate/1180.html?sort=sort&amp;sort_asc=desc&amp;price=656-820" data-attr-desc=""><i></i>820元以上</a> </li>
+                                    <li class="m-pricebox">
+                                        <form action="/cate/1180.html" method="post" id="price_form">
+                                            <input type="text" class="u-pri-start" id="start_price">
+                                            -
+                                            <input type="text" class="u-pri-end" name="end_price" id="end_price">
+                                            <span style="cursor:pointer;" class="z-btn ensure03 u-btn-pri" href="#">确认</span>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="searchbox">
+                <div class="list clearfix">
+                    <ul class="fl text12" id="order_ul">
+                        <li><a class="col7ac " href="#" style="cursor:pointer;"> 默认 </a> </li>
+                        <li><a class="col7ac " href="#" style="cursor:pointer;"> 销量 </a> </li>
+                        <li><a class="col7ac  " href="#" style="cursor:pointer;">价格<span class="icon_a "></span></a></li>
+                        <li><a class="col7ac " href="#" style="cursor:pointer;">评论</a></li>
+                        <li><a class="col7ac " href="#" style="cursor:pointer;">新品</a></li>
+                    </ul>
+                </div>
+            </div>
+            <ul id="cata_choose_product" class="cart_containt clearfix listContainer">
+            </ul>
+        </div>
+        <div id="page" class="page_div"></div>
+    </div>
+    <div class="footder">
+        <div class="foot-total fl">
+            <div class="foot">
+                <div class="foot-left">
+                    <ul>
+                        <li class="foot-max">售后服务</li>
+                        <li><a href="#">网站地图</a></li>
+                        <li><a href="#">商品索引</a></li>
+                        <li><a href="#">搜索词库</a></li>
+                        <li><a href="#">商品通用名</a></li>
+                        <li><a href="#">退换货政策</a></li>
+                        <li><a href="#">售后说明</a></li>
+                    </ul>
+                    <ul>
+                        <li class="foot-max">联系方式</li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                    <ul>
+                        <li class="foot-max">关于我们</li>
+                        <li><a href="#">关于公司</a></li>
+                        <li><a href="#">人才招聘</a></li>
+                    </ul>
+                    <ul>
+                        <li class="foot-max">资质信息</li>
+                        <li><a href="#">药品交易证</a></li>
+                        <li><a href="#">药品信息证</a></li>
+                        <li><a href="#">食品经营许可证</a></li>
+                        <li><a href="#">药品经营许可证</a></li>
+                        <li><a href="#">营业执照</a></li>
+                        <li><a href="#">医疗器械二类备案</a></li>
+                        <li><a href="#">医疗器械许可证</a></li>
+                        <li><a href="#">GSP证书</a></li>
+                    </ul>
+                    <ul>
+                        <li class="foot-max">资费标准</li>
+                        <li><a href="#">资费标准</a></li>
+                        <li><a href="#">入驻须知</a></li>
+                    </ul>
+                </div>
+                <div class="foot-right">
+                    <div class="call">
+                        <span>
+                            客服热线<br />
+                            <em>400-11-91160</em>
+                        </span>
+                        <img src="../images/phone.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="foot-base fl">
+            <div class="foot-bottom">
+                <p>
+                    广东一六零医药连锁有限公司---国家药监局认证的合法网上药店，致力于打造优质、低价、便捷的网上药店和最专业的健康服务平台<br />
+                    版权所有 保留一切权利 Copyright
+                    <em>0</em>
+                    2016-2018 www.160dyf.com 备案号:粤ICP备16105189号-2
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+var cata_choose_product = getid('cata_choose_product');
+var $page = 1;
+var $type = 'id';
+
+function ajax333(page) {
+    $.ajax({
+        url: "http://localhost:1903/160/src/api/orderby.php",
+        type: "get",
+        data: {
+            page: page,
+            type: $type,
+        },
+        success: function(str) {
+            console.log(str);
+            create(str);
+        }
+    });
+
+}
+ajax333($page);
+
+function create(str) {
+    var arr = JSON.parse(str);
+    console.log(arr);
+    console.log(arr.total);
+    var res = arr.goodslist.map(function(item) {
+        return `<li data-id="${item.id}">
+                    <div class="nosinglemore"></div>
+                    <div class="listbox clearfix">
+                        <div class="listPic">
+                            <a rel="nofollow" href="#">
+                                <img src="${item.src}" class="fn_img_lazy" title="${item.title}" alt="${item.title}">
+                            </a>
+                        </div>
+                        <div class="list-scroll">
+                            <div class="list-scroll-warp">
+                                <dl class="clearfix">
+                                    <dd class="">
+                                        <a href="#">
+                                            <img src="${item.small}" />
+                                        </a>
+                                    </dd>
+                                    <dd class="">
+                                        <a href="#">
+                                            <img src="${item.small}" />
+                                        </a>
+                                    </dd>
+                                    <dd class="">
+                                        <a href="#">
+                                            <img src="${item.small}" />
+                                        </a>
+                                    </dd>
+                                    <dd class="cur">
+                                        <a href="#">
+                                            <img src="${item.small}" />
+                                        </a>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="discountPrice">
+                            <div class="price-cash">
+                                <span class="text13">¥</span>
+                                <span class="text18">${item.price}</span>
+                                <del></del>
+                            </div>
+                        </div>
+                        <div class="listDescript">
+                            <a href="#" class="text13">${item.title}</a>
+                        </div>
+                        <div class="itemPrice">
+                            <div class="bobs"> <span class="text12">${item.pharmacy}</span></div>
+                            <div class="cart_wrapper"> <span class="text12">已售&nbsp;&nbsp;<i>${item.sold}</i></span></div>
+                        </div>
+                    </div>
+                </li>`;
+    }).join('');
+    cata_choose_product.innerHTML = res;
+    $(window).load(function() {
+        /* Act on the event */
+        $("#page").paging({
+            pageNum: 1, // 当前页面
+            totalNum: Math.ceil(arr.total / 12), // 总页码
+            totalList: arr.total, // 记录总数量
+            callback: function(num) { //回调函数
+                ajax333(num);
+            }
+        });
+    });
+
+}
+</script>
+
+</html>
