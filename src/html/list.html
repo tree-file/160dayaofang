@@ -11,6 +11,7 @@
     <script src="../lib/jquery.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="../lib/pageMe.js" type="text/javascript" charset="utf-8"></script>
     <script src="../js/myjquery.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/list.js" type="text/javascript" charset="utf-8"></script>
     <style type="text/css">
     /* 外面盒子样式---自己定义 */
     .page_div {
@@ -354,8 +355,8 @@
                     <ul class="fl text12" id="order_ul">
                         <li><a class="col7ac " href="#" style="cursor:pointer;"> 默认 </a> </li>
                         <li><a class="col7ac " href="#" style="cursor:pointer;"> 销量 </a> </li>
-                        <li><a class="col7ac  " href="#" style="cursor:pointer;">价格<span class="icon_a "></span></a></li>
-                        <li><a class="col7ac " href="#" style="cursor:pointer;">评论</a></li>
+                        <li id="price"><a class="col7ac  " style="cursor:pointer;">价格<span class=" icon_a "></span></a></li>
+                        <li><a class=" col7ac " href=" #" style="cursor:pointer;">评论</a></li>
                         <li><a class="col7ac " href="#" style="cursor:pointer;">新品</a></li>
                     </ul>
                 </div>
@@ -365,7 +366,7 @@
         </div>
         <div id="page" class="page_div"></div>
     </div>
-    <div class="footder">
+    <div class="footder fl">
         <div class="foot-total fl">
             <div class="foot">
                 <div class="foot-left">
@@ -427,98 +428,5 @@
         </div>
     </div>
 </body>
-<script type="text/javascript">
-var cata_choose_product = getid('cata_choose_product');
-var $page = 1;
-var $type = 'id';
-
-function ajax333(page) {
-    $.ajax({
-        url: "http://localhost:1903/160/src/api/orderby.php",
-        type: "get",
-        data: {
-            page: page,
-            type: $type,
-        },
-        success: function(str) {
-            console.log(str);
-            create(str);
-        }
-    });
-
-}
-ajax333($page);
-
-function create(str) {
-    var arr = JSON.parse(str);
-    console.log(arr);
-    console.log(arr.total);
-    var res = arr.goodslist.map(function(item) {
-        return `<li data-id="${item.id}">
-                    <div class="nosinglemore"></div>
-                    <div class="listbox clearfix">
-                        <div class="listPic">
-                            <a rel="nofollow" href="#">
-                                <img src="${item.src}" class="fn_img_lazy" title="${item.title}" alt="${item.title}">
-                            </a>
-                        </div>
-                        <div class="list-scroll">
-                            <div class="list-scroll-warp">
-                                <dl class="clearfix">
-                                    <dd class="">
-                                        <a href="#">
-                                            <img src="${item.small}" />
-                                        </a>
-                                    </dd>
-                                    <dd class="">
-                                        <a href="#">
-                                            <img src="${item.small}" />
-                                        </a>
-                                    </dd>
-                                    <dd class="">
-                                        <a href="#">
-                                            <img src="${item.small}" />
-                                        </a>
-                                    </dd>
-                                    <dd class="cur">
-                                        <a href="#">
-                                            <img src="${item.small}" />
-                                        </a>
-                                    </dd>
-                                </dl>
-                            </div>
-                        </div>
-                        <div class="discountPrice">
-                            <div class="price-cash">
-                                <span class="text13">¥</span>
-                                <span class="text18">${item.price}</span>
-                                <del></del>
-                            </div>
-                        </div>
-                        <div class="listDescript">
-                            <a href="#" class="text13">${item.title}</a>
-                        </div>
-                        <div class="itemPrice">
-                            <div class="bobs"> <span class="text12">${item.pharmacy}</span></div>
-                            <div class="cart_wrapper"> <span class="text12">已售&nbsp;&nbsp;<i>${item.sold}</i></span></div>
-                        </div>
-                    </div>
-                </li>`;
-    }).join('');
-    cata_choose_product.innerHTML = res;
-    $(window).load(function() {
-        /* Act on the event */
-        $("#page").paging({
-            pageNum: 1, // 当前页面
-            totalNum: Math.ceil(arr.total / 12), // 总页码
-            totalList: arr.total, // 记录总数量
-            callback: function(num) { //回调函数
-                ajax333(num);
-            }
-        });
-    });
-
-}
-</script>
 
 </html>

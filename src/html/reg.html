@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="../css/reg.css">
     <script src="../js/jquery-1.10.1.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="../lib/gVerify.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/common.js" type="text/javascript" charset="utf-8"></script>
     <script src="../js/reg.js" type="text/javascript" charset="utf-8"></script>
 </head>
 
@@ -47,8 +48,9 @@
                         <li class="list">
                             <span class="title">短信验证码:</span>
                             <div class="this_title">
-                                <input type="text" placeholder="请输入短信验证码" class="not" />
+                                <input type="text" placeholder="请输入短信验证码" class="not" id="code_duan" />
                                 <input type="button" name="" value="获取短信验证码" class="note" id="my_button" />
+                                <span id="duan_msg" class="wrong"></span>
                             </div>
                         </li>
                         <li class="list">
@@ -68,7 +70,6 @@
                         </li>
                         <li class="character list">
                             <div class="character_l">
-                                <input type="checkbox" />
                                 <span>我已阅读并同意</span>
                             </div>
                             <a href="#" class="character_r">《160大药房网服务协议》</a>
@@ -177,39 +178,5 @@
         </div>
     </div>
 </body>
-<script>
-var verifyCode = new GVerify("v_container");
-
-document.getElementById("my_button").onclick = function() {
-    var res = verifyCode.validate(document.getElementById("code_input").value);
-    if (res) {
-        $('#code_msg').html("验证码正确");
-        var rdc = randomCode();
-        $.ajax({
-                url: '../api/phone.php',
-                type: 'get',
-                data: {
-                    'phone': $tell1,
-                    'code': $rdc,
-                },
-            })
-            .done(function() {
-                console.log("success");
-            })
-            .fail(function() {
-                console.log("error");
-            })
-            .always(function() {
-                console.log("complete");
-            });
-
-    } else {
-        $('#code_msg').html("验证码错误");
-    }
-}
-$('#v_container').click(function() {
-    $('#code_msg').html("");
-});
-</script>
 
 </html>

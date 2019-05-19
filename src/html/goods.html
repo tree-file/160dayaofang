@@ -8,7 +8,9 @@
     <link rel="stylesheet" type="text/css" href="../css/goods.css">
     <script src="../js/common.js" type="text/javascript" charset="utf-8"></script>
     <script src="../js/jquery-1.10.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../lib/zoomsl.min.js"></script>
     <script src="../js/myjquery.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/goods.js" type="text/javascript" charset="utf-8"></script>
 </head>
 
 <body>
@@ -169,16 +171,59 @@
             <em>三九999 感冒灵颗粒 10g*9袋</em>
         </div>
         <div class="product-main">
-            <div class="product-gallery">
+            <div class="product-gallery fl">
+                <div class="product-photo" id="photoBody">
+                    <div class="product-img jqzoom">
+                        <img id="zoomimg" class="my-foto" src="../images/5941011a2ed80.jpg" alt="感冒灵颗粒 13.00">
+                        <div class="my-container"></div>
+                    </div>
+                    <div class="product-small-img fn-clear">
+                        <a href="javascript:;" class="next-left next-btn fl"></a>
+                        <div class="pic-hide-box fl">
+                            <ul class="small-pic" style="left:0;">
+                                <li class="small-pic-li">
+                                    <a>
+                                        <img src="../images/5941012530917.jpg" alt="感冒灵颗粒 13.00">
+                                        <i></i>
+                                    </a>
+                                </li>
+                                <li class="small-pic-li">
+                                    <a>
+                                        <img src="../images/5941012530917.jpg" alt="感冒灵颗粒 13.00">
+                                        <i></i>
+                                    </a>
+                                </li>
+                                <li class="small-pic-li  active">
+                                    <a>
+                                        <img src="../images/5941012530917.jpg" alt="感冒灵颗粒 13.00">
+                                        <i></i>
+                                    </a>
+                                </li>
+                                <li class="small-pic-li">
+                                    <a>
+                                        <img src="../images/5941012530917.jpg" alt="感冒灵颗粒 13.00">
+                                        <i></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="javascript:;" class="next-right next-btn fl"></a>
+                    </div>
+                </div>
+                <div class="collect">
+                    <a>
+                        <i class="collect-ico collect-ico-null"></i>
+                        <span class="collect-text">收藏商品</span>
+                    </a>
+                </div>
             </div>
             <div class="product-info">
                 <div class="product-info-title">
                     <h1 class="superboler">
                         <div class="is_otc">
-                            <img src="../images/otc.png" style="margin-top:-10px;"> </div> 三九999 感冒灵颗粒 10g*9袋
+                            <img src="../images/otc.png" style="margin-top:-10px;"> </div> <em> 三九999 感冒灵颗粒 10g*9袋</em>
                     </h1>
-                    <p></p>
-                    <p>适应症： 解热镇痛 鼻塞流涕 </p>
+                    <p>适应症： <i> 解热镇痛 鼻塞流涕</i> </p>
                 </div>
                 <div class="product-info-mian">
                     <form id="buy_goods_form" name="buy_goods_form">
@@ -188,7 +233,7 @@
                                     <li class="refer" id="_market_price">
                                         <span class="attr">参&nbsp;考&nbsp;价</span>
                                         <del>
-                                            <q class="fn-rmb">¥</q>
+                                            <i class="fn-rmb">¥</i>
                                             <strong id="market_price" class="fn-rmb-num">19.00</strong>
                                         </del>
                                     </li>
@@ -196,7 +241,7 @@
                                         <span class="attr" style="margin-top: 0px;">商&nbsp;城&nbsp;价&nbsp;</span>
                                         <div class="nett-box fn-clear">
                                             <div class="nett-box-value">
-                                                <q class="fn-rmb">¥</q>
+                                                <i class="fn-rmb">¥</i>
                                                 <strong class="fn-rmb-num" id="goods_price">13.00</strong>
                                                 <i class="clue" style="display: inline;">（
                                                     <a href="javascript:void(0);" id="toprice">降价通知</a>）</i> </div>
@@ -206,16 +251,16 @@
                                 <ul class="list">
                                     <li class="nett fn-clear">
                                         <span class="attr" style="margin-left:10px;">通用名称</span>
-                                        <q class="fn-rmb">感冒灵颗粒</q>
+                                        <i class="fn-rmb1">感冒灵颗粒</i>
                                     </li>
                                     <li class="nett fn-clear">
                                         <span class="attr" style="margin-left:10px;">批准文号</span>
-                                        <q class="fn-rmb">国药准字Z44021940 <a href="http://app1.sfda.gov.cn/datasearch/face3/dir.html" target="_blank" title="国家食药局查询" style="color:#2785EA;">（国家食药局查询）</a>
-                                        </q>
+                                        <i class="fn-rmb2">国药准字Z44021940 <a href="http://app1.sfda.gov.cn/datasearch/face3/dir.html" target="_blank" title="国家食药局查询" style="color:#2785EA;">（国家食药局查询）</a>
+                                        </i>
                                     </li>
                                     <li class="nett fn-clear">
                                         <span class="attr" style="margin-left:10px;">生产企业</span>
-                                        <q class="fn-rmb">华润三九医药股份有限公司</q>
+                                        <i class="fn-rmb3">华润三九医药股份有限公司</i>
                                     </li>
                                 </ul>
                             </div>
@@ -394,5 +439,17 @@
         </div>
     </div>
 </body>
+<script type="text/javascript">
+jQuery(function() {
+
+    $(".my-foto").imagezoomsl({
+
+        descarea: ".my-container",
+        zoomrange: [1, 12],
+        magnifiereffectanimate: "fadeIn",
+        magnifierborder: "none"
+    });
+});
+</script>
 
 </html>

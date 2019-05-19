@@ -6,9 +6,17 @@
 	//接收参数
 	$page = isset($_GET['page']) ? $_GET['page'] : '1';//第几页
 	$type = isset($_GET['type']) ? $_GET['type'] : 'id';
+	$order = isset($_GET['order']) ? $_GET['order'] : 'ASC';
 	//写sql语句
 	$index = ($page - 1) * 12;
-	$sql = "SELECT * FROM list ORDER BY $type LIMIT $index ,12";
+	// $sql = "SELECT * FROM list ORDER BY $type $order LIMIT $index ,12";
+	// if($order) {
+		//有排序
+		$sql = "SELECT * FROM list ORDER BY $type $order LIMIT $index, 12";	
+	// }else {
+	// 	//没有排序
+	// 	$sql = "SELECT * FROM list LIMIT $index,12";
+	// }
 	//执行语句
 	$res = $conn->query($sql);
 	//获取结果集里面的内容

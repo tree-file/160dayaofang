@@ -35,9 +35,103 @@
         z-index: 2;
         zoom: 1;
 
+        .product-gallery {
+            width: 398px;
+            border-right: 1px solid #F2F2F2;
+
+            .product-photo {
+                position: relative;
+                width: 398px;
+                height: 490px;
+                border-bottom: 1px solid #F2F2F2;
+                background-color: #FFF;
+
+                .jqzoom {
+                    border: 1px solid #F2F2F2;
+                    float: left;
+                    position: relative;
+                    padding: 0px;
+                    cursor: pointer;
+                }
+
+                .product-img {
+                    position: relative;
+                    width: 396px;
+                    height: 396px;
+
+                    img {
+                        width: 396px;
+                        height: 396px;
+                    }
+                }
+
+                .product-small-img {
+                    width: 380px;
+                    height: 73px;
+                    overflow: hidden;
+                    margin: 3px 9px 0px;
+                }
+            }
+
+            .pic-hide-box {
+                position: relative;
+                width: 350px;
+                height: 73px;
+                overflow: hidden;
+            }
+
+            .small-pic {
+                position: absolute;
+                width: 350px;
+                overflow: hidden;
+
+                .small-pic-li {
+                    float: left;
+                    width: 60px;
+                    height: 63px;
+                    overflow: hidden;
+                    margin: 0 5px;
+                    padding-top: 10px;
+
+                    a {
+                        display: block;
+                        width: 58px;
+                        height: 58px;
+                        border: 1px solid #F1F1F1;
+                    }
+
+                    img {
+                        display: block;
+                        width: 58px;
+                        height: 58px;
+                    }
+                }
+            }
+
+            .collect {
+                margin: 10px 0px;
+                height: 22px;
+                line-height: 22px;
+                float: left;
+                font-size: 12px;
+
+                a {
+                    color: #6C6C6C;
+                }
+
+                .collect-ico {
+                    display: block;
+                    width: 13px;
+                    height: 12px;
+                    float: left;
+                    margin: 5px 2px 0 10px;
+                }
+            }
+        }
+
         .product-info {
             float: right;
-            width: 789px;
+            width: 788px;
             border-left: 1px solid #F2F2F2;
 
             .product-info-title {

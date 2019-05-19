@@ -1,3 +1,161 @@
+#cart {
+    width: 1190px;
+    margin: 0 auto;
+    min-height: 500px;
+}
 
+#cart li {
+    list-style: none;
+    clear: both;
+    width: 800px;
+    width: 1190px;
+    font-size: 12px;
+    color: #333;
+    line-height: 30px;
+    border: 1px solid #ccc;
+    margin: -1px;
+}
+
+#cart .list {
+    height: 30px;
+    background: #f7f7f7;
+}
+
+.list p {
+    border: 0;
+}
+
+.good {
+    height: 104px;
+}
+
+
+li .commodity {
+    width: 586px;
+    height: 100%;
+}
+
+li a {
+    color: #333;
+}
+
+li .commodity .wi63 {
+    width: 63px;
+    padding-top: 8px;
+}
+
+li .commodity .hi63 {
+    height: 63px;
+    line-height: 104px;
+    margin-left: 10px;
+}
+
+li .good_check {
+    width: 46px;
+    font-style: normal;
+    font-weight: 400;
+    height: 100%;
+}
+
+li .good_name {
+    height: 100%;
+    width: 150px;
+}
+
+li .good_price {
+    height: 100%;
+    width: 120px;
+}
+
+li .good_discount {
+    height: 100%;
+    width: 120px;
+}
+
+li .good_total {
+    height: 100%;
+    width: 120px;
+}
+
+li .good_del {
+    height: 100%;
+    width: 48px;
+}
+
+li .good_del {
+    height: 100%;
+    width: 48px;
+}
+
+li .good_del a {
+    width: 48px;
+}
+
+li input {
+    width: 34px;
+}
+
+ul li p {
+    float: left;
+    height: 30px;
+    text-align: center;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+ul li p span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: #d8d8d8;
+    cursor: pointer;
+    text-align: center;
+    line-height: 20px;
+}
+
+ul li p span::selection {
+    background: transparent;
+}
+
+div p {
+    float: left;
+    margin: 10px;
+}
+
+#del {
+    width: 1190px;
+    margin: 0 auto;
+}
+
+.order-header {
+    height: 106px;
+}
+
+.order-header .layout {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.order-header .layout .logo {
+    margin: inherit;
+    padding-top: 36px;
+    width: 345px;
+    float: left;
+}
+
+.order-header .layout .progress-area {
+    padding-top: 36px;
+}
+
+.order-header .layout .progress-area div {
+    width: 450px;
+    height: 47px;
+    text-indent: 100%;
+    white-space: nowrap;
+}
+
+.order-header .layout .progress-area .progress-area-wd {
+    background: url(../images/progress01.png) no-repeat;
+}
 
 /*# sourceMappingURL=car.css.map */

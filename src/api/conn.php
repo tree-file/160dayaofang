@@ -1,5 +1,5 @@
 <?php
-	
+    header("content-type:text/html;charset=utf-8");
 	//文件名不能写成con，系统文件，不给你取这个名字
 	
 	//1.连接数据库

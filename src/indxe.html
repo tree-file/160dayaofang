@@ -9,6 +9,8 @@
     <script src="js/common.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/myjquery.js" type="text/javascript" charset="utf-8"></script>
     <script src="lib/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
 </head>
 
 <body>
@@ -23,7 +25,7 @@
                 <ul class="fl">
                     <li class="list fl" style="display: inline-block;">
                         <a class="list-l fl" href="#">
-                            <span>Hi，请登录</span> </a><a class="list-l list-i fl" href="#">免费注册</a>
+                            <span></span> </a><a class="list-l list-i fl" href="#"></a>
                     </li>
                     <li class="fl sep"></li>
                 </ul>
@@ -1063,37 +1065,5 @@
         </div>
     </div>
 </body>
-<script type="text/javascript">
-var side = document.getElementById('side');
-var header = document.getElementsByClassName('header');
-var scrollTop = window.scrollY;
-
-window.onscroll = function() {
-    var scrollTop = window.scrollY;
-    var iw = 120;
-    if (scrollTop >= iw) {
-        side.className = 'fix';
-    } else {
-        side.className = '';
-    }
-}
-var swiper = new Swiper('.swiper-container', {
-    spaceBetween: 30,
-    centeredSlides: true,
-    autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-    },
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-    // loop: true,
-});
-</script>
 
 </html>
