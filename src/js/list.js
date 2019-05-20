@@ -2,7 +2,7 @@
  * @Author: Marte
  * @Date:   2019-05-20 00:55:58
  * @Last Modified by:   Marte
- * @Last Modified time: 2019-05-20 01:18:15
+ * @Last Modified time: 2019-05-20 09:12:53
  */
 
 $(function() {
@@ -109,7 +109,7 @@ $(function() {
         $('.list-l').eq(0).find('span').html(getCookie('phone'));
         $('.list-i').html('退出').addClass('tui');
         $('.container-right').click(function() {
-            location.href = "html/car.html";
+            location.href = "../html/car.html";
         })
     } else {
         $('.list-l').eq(0).find('span').html('Hi，请登录');
@@ -124,10 +124,10 @@ $(function() {
         })
     } else {
         $('.list-l').eq(0).find('span').click(function() {
-            location.href = "html/login.html";
+            location.href = "../login.html";
         })
         $('.list-l').eq(1).click(function() {
-            location.href = "html/reg.html";
+            location.href = "../html/reg.html";
         })
     }
 });

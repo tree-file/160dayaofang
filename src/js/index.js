@@ -2,7 +2,7 @@
  * @Author: Marte
  * @Date:   2019-05-20 00:44:08
  * @Last Modified by:   Marte
- * @Last Modified time: 2019-05-20 01:12:12
+ * @Last Modified time: 2019-05-20 09:17:39
  */
 $(function() {
     var side = document.getElementById('side');
@@ -38,6 +38,7 @@ $(function() {
     })
     $('.nav-list-warpper li,.menu-sub').hover(function() {
             $('.menu-sub').show().stop().animate({ 'left': 188 }, 300);
+            $('.menu-sub').css('opacity', '1');
         },
         function() {
             /* Stuff to do when the mouse leaves the element */
