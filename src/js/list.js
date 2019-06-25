@@ -2,14 +2,14 @@
  * @Author: Marte
  * @Date:   2019-05-20 00:55:58
  * @Last Modified by:   Marte
- * @Last Modified time: 2019-05-20 09:12:53
+ * @Last Modified time: 2019-05-20 22:32:44
  */
 
 $(function() {
 
     var cata_choose_product = getid('cata_choose_product');
     var $page = 1;
-    var $type = 'id';
+    var $type = 'gid';
     var price = getid('price');
     var $order = 'ASC';
 
@@ -34,7 +34,7 @@ $(function() {
     function create(str) {
         var arr = JSON.parse(str);
         var res = arr.goodslist.map(function(item) {
-            return `<li data-id="${item.id}">
+            return `<li data-id="${item.gid}">
                     <div class="nosinglemore"></div>
                     <div class="listbox clearfix">
                         <div class="listPic">
@@ -121,6 +121,7 @@ $(function() {
     if ($('.list-i').hasClass('tui')) {
         $('.list-i').click(function() {
             removeCookie('phone');
+            history.go(0);
         })
     } else {
         $('.list-l').eq(0).find('span').click(function() {

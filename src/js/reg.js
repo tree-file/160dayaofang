@@ -2,7 +2,7 @@
  * @Author: Marte
  * @Date:   2019-05-14 09:37:36
  * @Last Modified by:   Marte
- * @Last Modified time: 2019-05-20 11:50:49
+ * @Last Modified time: 2019-05-20 19:46:54
  */
 $(function() {
     var $arr = [];
@@ -77,14 +77,14 @@ $(function() {
                 $arr[$(this).parents('.list').index()] = 0;
                 rdc = randomCode();
                 console.log(rdc);
-                // $.ajax({
-                //     url: '../api/phone.php',
-                //     type: 'get',
-                //     data: {
-                //         'phone': tell1,
-                //         'code': rdc,
-                //     },
-                // })
+                $.ajax({
+                    url: '../api/phone.php',
+                    type: 'get',
+                    data: {
+                        'phone': tell1,
+                        'code': rdc,
+                    },
+                })
             } else {
                 $('#code_msg').html("验证码错误");
                 $arr[$(this).parents('.list').index()] = 1;

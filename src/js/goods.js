@@ -2,13 +2,12 @@
  * @Author: Marte
  * @Date:   2019-05-15 21:08:37
  * @Last Modified by:   Marte
- * @Last Modified time: 2019-05-20 16:57:43
+ * @Last Modified time: 2019-05-21 00:13:55
  */
 
 $(function() {
     var data = decodeURI(location.search);
     var str = data.slice(1);
-    console.log(str);
     $.ajax({
         type: 'get',
         url: "../api/goods.php",
@@ -16,7 +15,6 @@ $(function() {
         // dataType: 'json',
         success: function(str) {
             var arrObj = JSON.parse(str);
-            console.log(arrObj);
             var html = `
                                 <li class="small-pic-li">
                                     <a>
@@ -58,15 +56,13 @@ $(function() {
         $('.btn1').click(function() {
             alert('已加入购物车');
             var $pone = getCookie('phone');
-            var $gid = $(this).attr('data-id');
-            var $num = $('#amount').val();
             $.ajax({
                 type: 'get',
-                url: '../api/cart.php',
-                data: { 'gid': $gid, 'num': $num },
+                url: 'http://localhost:1903/160/src/api/cart.php',
+                data: { 'gid': str, 'num': $('input[name="goods_num"]').val(), 'isok': true },
                 dataType: 'json',
                 success: function(str) {
-
+                    console.log(str)
                 }
             })
         })
@@ -83,6 +79,7 @@ $(function() {
     if ($('.list-i').hasClass('tui')) {
         $('.list-i').click(function() {
             removeCookie('phone');
+            history.go(0);
         })
     } else {
         $('.list-l').eq(0).find('span').click(function() {

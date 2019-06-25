@@ -2,7 +2,7 @@
  * @Author: Marte
  * @Date:   2019-05-20 00:44:08
  * @Last Modified by:   Marte
- * @Last Modified time: 2019-05-20 09:17:39
+ * @Last Modified time: 2019-05-20 19:12:08
  */
 $(function() {
     var side = document.getElementById('side');
@@ -24,6 +24,7 @@ $(function() {
     if ($('.list-i').hasClass('tui')) {
         $('.list-i').click(function() {
             removeCookie('phone');
+            history.go(0);
         })
     } else {
         $('.list-l').eq(0).find('span').click(function() {
@@ -69,5 +70,6 @@ $(function() {
             prevEl: '.swiper-button-prev',
         },
         // loop: true,
+        autoplay: true,
     });
 });

@@ -2,7 +2,6 @@
 	//连接数据库
 	include 'conn.php';
 	header("Content-type: text/html; charset=utf-8");
-	mysqli_query($conn,"set names utf8");
 	//接收参数
 	$page = isset($_GET['page']) ? $_GET['page'] : '1';//第几页
 	$type = isset($_GET['type']) ? $_GET['type'] : 'id';
@@ -12,7 +11,7 @@
 	// $sql = "SELECT * FROM list ORDER BY $type $order LIMIT $index ,12";
 	// if($order) {
 		//有排序
-		$sql = "SELECT * FROM list ORDER BY $type $order LIMIT $index, 12";	
+		$sql = "SELECT * FROM list ORDER BY '$type' '$order'  LIMIT $index, 12";	
 	// }else {
 	// 	//没有排序
 	// 	$sql = "SELECT * FROM list LIMIT $index,12";
